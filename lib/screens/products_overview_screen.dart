@@ -35,20 +35,20 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
   }
 
   @override
-  void didChangeDependencies() {
-    if (_isinIt) {
-      setState(() {
-        _isLoading = true;
-      });
-      Provider.of<Products>(context).fetchAndSetProducts().then((_) {
-        setState(() {
-          _isLoading = false;
-        });
-      });
-    }
-    _isinIt = false;
-    super.didChangeDependencies();
-  }
+  // void didChangeDependencies() {
+  //   if (_isinIt) {
+  //     setState(() {
+  //       _isLoading = true;
+  //     });
+  //     Provider.of<Products>(context).fetchAndSetProducts().then((_) {
+  //       setState(() {
+  //         _isLoading = false;
+  //       });
+  //     });
+  //   }
+  //   _isinIt = false;
+  //   super.didChangeDependencies();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -100,8 +100,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
       drawer: AppDrawer(),
       body: _isLoading
           ? Center(
-              child: CircularProgressIndicator(),
-            )
+              //child: CircularProgressIndicator(),
+              )
           : ProductGrid(_showOnlyFavoritesData),
     );
   }

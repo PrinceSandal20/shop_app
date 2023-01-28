@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/screens/products_overview_screen.dart';
 
 import '../providers/auth.dart';
 import '../models/http_exception.dart';
@@ -146,7 +147,8 @@ class _AuthCardState extends State<AuthCard> {
           _authData['password'],
         );
       }
-      //Navigator.of(context).pushReplacement('/products-overview');
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (ctx) => ProductsOverviewScreen()));
     } on HttpException catch (error) {
       var errorMessage = 'Authentication failed';
       if (error.toString().contains('EMAIL_EXISTS')) {
