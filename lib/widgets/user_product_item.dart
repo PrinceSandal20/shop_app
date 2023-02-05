@@ -35,14 +35,14 @@ class UserProductItem extends StatelessWidget {
                   await Provider.of<Products>(context, listen: false)
                       .deleteProduct(id);
                 } catch (error) {
-                  scaffold.showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        'Deleting failed',
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  );
+                  // scaffold.showSnackBar(
+                  //   SnackBar(
+                  //     content: Text(
+                  //       'Deleting failed',
+                  //       textAlign: TextAlign.center,
+                  //     ),
+                  //   ),
+                  // );
                 }
               },
               icon: Icon(Icons.delete),

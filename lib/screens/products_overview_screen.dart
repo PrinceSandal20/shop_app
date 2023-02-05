@@ -8,6 +8,7 @@ import '../providers/products.dart';
 import '../widgets/badge.dart';
 import '../providers/cart.dart';
 import './cart_screen.dart';
+import 'package:badges/badges.dart';
 
 enum FilterOptions {
   Favorites,
@@ -82,10 +83,10 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             ),
           ),
           Consumer<Cart>(
-            builder: (_, cart, ch) => Badge(
-              child: ch,
-              value: cart.itemCount.toString(),
-            ),
+            // builder: (_, cart, ch) => Badge(
+            //   child: ch,
+            //   value: cart.itemCount.toString(),
+            // ),
             child: IconButton(
               icon: Icon(
                 Icons.shopping_cart,
